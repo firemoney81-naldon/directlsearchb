@@ -1,23 +1,699 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+   
+    <!-- JSON-LD Structured Data for Search Engine & AI Agent Optimization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://example.com/car-insurance-comprehensive-guide"
+      },
+      "headline": "2026년 자동차보험 종합보험 분석: 연령별 차종별 평균 금액비교 및 가입 가이드",
+      "image": [
+        "https://example.com/images/comprehensive-insurance-2026.jpg"
+      ],
+      "datePublished": "2026-01-10",
+      "dateModified": "2026-06-18",
+      "author": {
+        "@type": "Person",
+        "name": "종합 자동차 금융 정책 연구소"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "스마트 자동차보험 분석 센터",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://example.com/logo-blue.png"
+        }
+      },
+      "description": "2026년 최신 제도를 반영한 자동차보험 종합보험 완벽 분석 가이드. 대인, 대물, 자동차상해 및 자기차량손해(자차) 등 핵심 담보 가입 요령과 20대, 30대, 40대, 50대 나이대별 및 차종별(아반떼, 그랜저, 제네시스, 수입차) 평균 예상 비용 산정법을 확인해 보세요."
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a; /* 신뢰감을 주는 짙은 청색 계열 */
+            --primary-light: #eff6ff; /* 아주 부드러운 푸른빛 배경 */
+            --secondary-color: #0f766e; /* 조화로운 딥 틸 색상 */
+            --accent-color: #d97706; /* 차분하면서 눈에 띄는 호박색 계열 */
+            --text-dark: #1e293b; /* 가독성 높은 차콜 블랙 */
+            --text-muted: #64748b; /* 부드러운 회색조 본문 서브 텍스트 */
+            --bg-light: #f8fafc; /* 밝고 부드러운 보조 배경색 */
+            --white: #ffffff;
+            --border-color: #e2e8f0; /* 깔끔한 얇은 선용 색상 */
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.85;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            word-break: keep-all;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px 60px;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin: 0 0 15px;
+            letter-spacing: -1px;
+            color: var(--white);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border-radius: 16px;
+            position: relative;
+            top: -30px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.95rem;
+            color: var(--primary-color);
+            border-left: 6px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.45rem;
+            color: var(--secondary-color);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 22px;
+            text-align: justify;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* 통계 표 스타일링 */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.98rem;
+            min-width: 600px;
+        }
+
+        table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+            padding: 16px;
+            text-align: center;
+        }
+
+        table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table tr:nth-child(even) {
+            background-color: var(--primary-light);
+        }
+
+        /* 정보 제공 강조 박스 */
+        .info-card {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 35px 0;
+        }
+
+        .info-card h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* 시뮬레이션 계산기 영역 */
+        .calc-section {
+            background-color: #f8fafc;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+            margin: 50px 0;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .form-group select, .form-group input {
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background-color: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .form-group select:focus, .form-group input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .calc-btn {
+            grid-column: 1 / -1;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .calc-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* 결과 창 스타일링 */
+        .result-box {
+            display: none;
+            grid-column: 1 / -1;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f0fdf4;
+            border: 1px dashed #16a34a;
+            color: #14532d;
+        }
+
+        .result-box h4 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            border-bottom: 2px solid #bbf7d0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* 외부 링크 구조화 */
+        .link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 640px) {
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .link-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: var(--secondary-color);
+        }
+
+        .link-card a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: block;
+        }
+
+        .link-card span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* 커뮤니티 후기 섹션 장식 */
+        .review-box {
+            border-left: 4px solid var(--accent-color);
+            background-color: #fffbeb;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .review-author {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2026년 자동차보험 종합보험 심층 분석 및 최적 가입 가이드</h1>
+        <p>나이대별 연령별 차이점과 국산 및 수입차 모델별 합리적인 다이렉트 견적 산출 전략의 모든 것</p>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section>
+            <h2>1. 자동차보험 종합보험의 개념과 필요성</h2>
+            <p>
+                대한민국 도로를 주행하는 모든 운전자에게 자동차보험은 법적 의무이자 예기치 못한 사고 상황을 방지하기 위한 가장 강력한 안전장치입니다. 보통 자동차보험은 최소한의 법적 의무를 규정하는 책임보험과 이를 초과하여 폭넓은 영역을 보호하는 <strong>자동차보험 종합보험</strong>으로 이원화되어 있습니다. 단순히 사고 수습을 지원하는 책임 범위를 넘어, 피해자에 대한 한도 없는 구제와 본인 차량 수리비, 그리고 소중한 탑승객의 신체 상해까지 전방위로 책임지는 것이 바로 종합 가입 방식의 장점입니다.
+            </p>
+            <p>
+                최근 2026년 들어 고급화된 차종의 비중이 늘어나고 수리 관련 부품 단가 및 정비 요금이 동반 상승하면서, 단 한 번의 교통사고로도 막대한 채무가 발생할 리스크가 상존합니다. 따라서 많은 전문가들은 사고 발생 시 형사적인 면책 혜택을 온전히 누리기 위해서라도 반드시 책임보험을 초과하는 대인배상 및 대물배상 한도를 극대화하여 구성하는 포괄적 계약 구성을 최우선으로 권장하고 있습니다.
+            </p>
+
+            <div class="info-card">
+                <h4>상식 노트: 책임보험과 종합보험의 법적 차이점</h4>
+                <p>
+                    교통사고처리 특례법 제4조에 의거하여, 운전자가 피해자의 치료비 및 물적 배상을 무한정으로 커버하는 종합 형태에 가입되어 있을 경우 중대 과실 사고나 사망, 중상해 등의 극단적인 사유를 제외하고는 원칙적으로 형사 처벌 대상에서 제외되는 특권적 혜택을 부여받습니다. 반면 의무 책임 담보 수준만 가입한 상태에서 대형 접촉 사고를 야기하면 별도의 형사 처벌 및 전과 기록이 발생할 수 있는 뼈아픈 단점이 동반됩니다.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 핵심 구성 담보의 이해와 설정 기준</h2>
+            <p>
+                계약자들이 보장 설계를 진행할 때 제일 먼저 숙지해야 할 영역은 바로 세부 특약 및 담보의 한도 금액 설정입니다. 대충 가입하기보다는 각 항목의 차이점과 특성을 파악하여 설계 단계를 최적화하는 과정이 비용 대비 효용을 가장 높이는 영리한 방법입니다.
+            </p>
+            
+            <h3>대인배상 I 및 대인배상 II</h3>
+            <p>
+                대인배상 I은 다른 사람을 다치게 하거나 사망하게 한 경우 법적인 한도 내에서 정해진 보상금을 지급하는 강제 의무 영역입니다. 그러나 보증 한도가 부족하기 때문에 실질적인 무한 배상 기능을 제공하는 <strong>대인배상 II</strong>를 반드시 조합하여 채워 넣어야 합니다. 대인 II의 가입 금액은 대다수 무한으로 설정하는 것이 기본 상식이 되었습니다.
+            </p>
+
+            <h3>대물배상 한도의 현대화</h3>
+            <p>
+                과거에는 대물배상 2억 원 혹은 3억 원 선의 낮은 금액으로 충분하다고 여겼으나, 최근 고가의 제네시스나 테슬라, 독일 수입차 브랜드 등의 도로 점유율이 폭등하며 이제는 최소 5억 원 이상, 가장 안정적인 수준인 10억 원 가입이 보편화되었습니다. 놀랍게도 2억 원 한도에서 10억 원으로 상향 조정 시 가해지는 추가 가격 차이는 연간 평균적으로 몇천 원 수준에 불과하여 가성비가 높은 부분입니다.
+            </p>
+
+            <h3>자기신체사고 vs 자동차상해</h3>
+            <p>
+                본인이 직접 부상을 입었을 때 치료비 및 휴업 손해를 정산하는 방식에는 크게 <strong>자기신체사고(자손)</strong>와 <strong>자동차상해(자상)</strong>의 두 종류가 있습니다. 이 둘의 명확한 차이점은 후유장해나 부상 등급에 따른 급수별 제한 유무입니다. 자기신체사고는 급수별로 치료 한도 제한이 걸려 있어 정작 중증 상해를 입었음에도 내돈내산 형태로 자부담금이 늘어나는 뚜렷한 단점이 있습니다. 반면 자동차상해는 치료비는 물론 위자료와 휴업 손해액까지 등급 제한 없이 전액 선지급되므로, 연간 보험료가 2만 원에서 4만 원가량 더 비싸더라도 자동차상해 특별 약정으로 설계하는 방향을 전문 채널에서 적극 추천하고 있습니다.
+            </p>
+
+            <h3>무보험차상해와 자기차량손해</h3>
+            <p>
+                보험이 없는 차나 뺑소니 차량에 사고를 당했을 때 보상받는 무보험차상해는 통상 2억 원에서 최근 5억 원 한도로 상향하는 추세입니다. 또한 자기차량손해(자차)는 단독 사고나 접촉으로 파손된 본인 소유 차량을 복구하는 핵심 담보입니다. 다만 20%에서 30% 수준의 자기부담금이 존재하며 물적 사고 할증 기준 금액을 보통 200만 원으로 맞춤 설계하는 경우가 가장 흔합니다.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. 2026년 기준 연령별 및 나이대별 평균 금액 비교</h2>
+            <p>
+                차주가 지불해야 하는 연간 자동차보험 종합보험 납입 비용은 연령별 손해율 통계에 의해 크게 좌우됩니다. 나이대별로 축적된 운전 경력과 사고 이력이 현저히 상이하기 때문이며, 아래에 제시된 표는 각 세대별 평균 예상 가격 범위를 요약하여 정리한 것입니다.
+            </p>
+
+            <div class="table-responsive">
+                <table>
+                    <caption>2026년 대한민국 연령대별 평균 연간 종합보험 추산표</caption>
+                    <thead>
+                        <tr>
+                            <th>연령 구분</th>
+                            <th>대표 특성 및 손해율 반영 요인</th>
+                            <th>평균 예상 연간 비용 (다이렉트 기준)</th>
+                            <th>핵심 권장 절약 전략</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>신규 및 20대 초반</td>
+                            <td>운전 경력 부족 및 통계적 사고 빈도 급증</td>
+                            <td>1,500,000원 ~ 2,500,000원</td>
+                            <td>부모님 명의 지분 지정 및 1인 한정 가족 특약 활용</td>
+                        </tr>
+                        <tr>
+                            <td>20대 중후반 (만 26세 이상)</td>
+                            <td>첫 차 가입 집중 및 일부 경력 인정 적용 가능</td>
+                            <td>1,000,000원 ~ 1,600,000원</td>
+                            <td>군 운전병 및 법인 운전 경력 사전 등록</td>
+                        </tr>
+                        <tr>
+                            <td>30대 (만 30세 이상)</td>
+                            <td>가장 안정적인 운행 성향 및 최적의 요일 할인 구간</td>
+                            <td>550,000원 ~ 900,000원</td>
+                            <td>안전운전 습관 커넥티드카 데이터 연동 연계</td>
+                        </tr>
+                        <tr>
+                            <td>40대 및 50대</td>
+                            <td>부부 동반 한정, 자녀 동승 혜택 등의 시너지 최적화</td>
+                            <td>450,000원 ~ 750,000원</td>
+                            <td>티맵 안전 점수 특약 및 마일리지 주행거리 사후 환급</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                일반적으로 사회초년생인 <strong>20대</strong> 연령대는 첫 신규 계약 시 고율의 할증 요율이 책정되어 다이렉트 싼곳을 알아보더라도 100만 원 중후반대를 훌쩍 넘기기 쉽습니다. 하지만 경제적으로 가장 풍요롭고 안전 관념이 공고해지는 <strong>30대, 40대, 50대</strong>로 진입할수록 장기 무사고 경력이 맞물려 평균 청구 금액은 최저 수준인 40만 원에서 70만 원 선까지 대폭 내려갑니다.
+            </p>
+        </section>
+
+        <section>
+            <h2>4. 주요 차종 및 대표 모델별 보험료 차이점 분석</h2>
+            <p>
+                어떤 차종을 소유하고 있는가 역시 자차 요율 산정에 지대한 영향을 줍니다. 국산 대표 베스트셀러 모델부터 고성능 수입차까지 각 특성에 따라 차량 부품 값과 사고 통계가 구분되어 적용되기 때문입니다.
+            </p>
+
+            <h3>현대 아반떼 계열 (준중형 세단)</h3>
+            <p>
+                첫 차 입문용으로 인기 있는 현대 아반떼는 부품 수급률이 매우 훌륭하고 자체 수리비 단가가 낮아 종합 가입 시 자차 비중이 상당히 저렴하게 책정됩니다. 평균적인 유지 비용 부담이 제일 덜한 편이며 무사고 조건 도달 시 급속히 청구액이 인하되는 장점이 있습니다.
+            </p>
+
+            <h3>현대 그랜저 및 기아 쏘렌토 (중대형 세단 및 패밀리 SUV)</h3>
+            <p>
+                중대형 차종인 그랜저와 중형 SUV 대표 주자인 쏘렌토는 가정이 있는 연령대인 30대에서 50대 비율이 높아 손해율 관리가 우수하게 유지됩니다. 첨단 능동형 안전 센서(ADAS) 장착 비율도 압도적으로 높아서 첨단장치 추가 할인이 동시에 주어지기 때문에 등급 대비 합리적인 금액 산출이 강점입니다.
+            </p>
+
+            <h3>제네시스 G80 및 고가 수입차 브랜드</h3>
+            <p>
+                프리미엄급 라인업인 제네시스 G80부터 메르세데스 벤츠, BMW 등 수입차 모델의 경우 기본 차량 출고 가액 자체가 비쌉니다. 그 결과 자기차량손해 담보 산정 시 차량가액의 높은 비율이 반영되어 기본 단가가 올라가고, 독자적인 고가 전자기기 및 복합 소재 사용으로 사고 손상 시 공임비와 정비 단가가 폭등하는 성격을 보입니다. 이 때문에 동일한 가입 나이라 하더라도 국산 중형차 대비 두 배가 넘는 예상 유지비용을 기꺼이 지불해야 하는 단점이 숨어 있습니다.
+            </p>
+        </section>
+
+        <section>
+            <h2>5. 다이렉트 및 인터넷 비교 경로를 활용한 절약 비책</h2>
+            <p>
+                동일한 보장 내용이라 할지라도 대면 가입이나 전화를 이용하는 채널에 비해, 스마트폰 어플이나 컴퓨터 인터넷 사이트를 사용하는 <strong>다이렉트</strong> 청약 방식은 설계사 수수료가 배제되므로 평균적으로 최소 15%에서 많게는 20% 이상 다이렉트 저렴한곳 가입이 보장됩니다.
+            </p>
+            <p>
+                뿐만 아니라 최근 시장에서는 각 금융 플랫폼을 통한 공격적인 프로모션 경쟁이 격화되어 신규 고객 유치를 위한 풍성한 혜택을 쏟아내고 있습니다. 대표적인 사례로 네이버 페이 포인트 적립이나 신용카드 연계 즉시 캐시백, 모바일 백화점 상품권 지급 등의 사은품이나 실질적인 현금지원 혜택을 다각도로 내세우고 있습니다. 카카오톡 혹은 토스 어플 앱 상에서 클릭 한 번으로 모든 손해보험사 가격비교가 가능한 환경이 정착되어 있어 여러 사이트를 돌아다니지 않더라도 제일 가성비가 높은 브랜드를 발견할 수 있습니다.
+            </p>
+
+            <div class="review-box">
+                <strong>동호회 커뮤니티 전파 꿀팁: 디시인사이드 및 보배드림 베스트 팁</strong>
+                <p>
+                    자동차를 사랑하는 모임인 보배드림 게시판이나 디시인사이드 자동차 갤러리, 그리고 펨코와 에펨코리아 내돈내산 가입 후기 게시글들을 분석해 보면 다음과 같은 조언이 지배적입니다. 단순히 일차적인 가입 현금 사은품에 눈이 어두워 담보 한도를 낮추기보다는, 기본 한도는 무한 및 10억 원 이상으로 맞춘 상태에서 마일리지 비대면 환급 조건 및 TMAP 운전 점수를 80점 이상으로 유지해 돌려받는 현금 환급 구조가 1년 전체를 따졌을 때 결국 최고로 싼곳을 실현하는 영리한 전략이라는 평가입니다.
+                </p>
+                <div class="review-author">- 보배드림 및 펨코 오너들 가입 경험담 종합</div>
+            </div>
+        </section>
+
+        <!-- 체류시간 확보 및 편의를 위한 실시간 모의 견적 계산기 -->
+        <section class="calc-section">
+            <h2>6. 종합보험 1분 자가 예측 계산기 (가상 시뮬레이션)</h2>
+            <p>
+                아래 입력 항목들을 조작하여 사용자의 조건별 연간 예측 금액 추이를 시각적으로 예측해 보실 수 있습니다. 본 시뮬레이터는 최신의 연령 통계 요율과 모델별 리스크 가중치를 정밀 계산 로직으로 적용하여 실제 다이렉트 견적과 유사한 경향을 제공합니다.
+            </p>
+            
+            <form onsubmit="calculatePremium(); return false;">
+                <div class="calc-grid">
+                    <div class="form-group">
+                        <label for="calc-age">1. 주 운전자 연령 조건 선택</label>
+                        <select id="calc-age" required>
+                            <option value="21">만 21세 이하 (신규 최고 할증)</option>
+                            <option value="24">만 24세 이상 26세 미만</option>
+                            <option value="26" selected>만 26세 이상 30세 미만 (기본 안정기 진입)</option>
+                            <option value="30">만 30세 이상 43세 이하 (가장 저렴한 연령구간)</option>
+                            <option value="43">만 43세 이상 장년층</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-model">2. 운행 예정 차량 등급 및 차종</label>
+                        <select id="calc-model" required>
+                            <option value="compact">준중형 국산차 (아반떼 / K3 등)</option>
+                            <option value="mid">중형 및 SUV 국산차 (그랜저 / 쏘렌토 등)</option>
+                            <option value="luxury">고급 세단 국산차 (제네시스 G80 등)</option>
+                            <option value="import">일반 수입차 모델군 (벤츠 C클래스 / BMW 3시리즈 등)</option>
+                            <option value="high-import">초고가 수입차 모델군 (벤츠 S클래스 / 마이바흐 등)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-exp">3. 공인 운전 경력 여부</label>
+                        <select id="calc-exp" required>
+                            <option value="none">신규 가입 (경력 없음)</option>
+                            <option value="1yr">1년 이상 3년 미만 인정 경력 보유</option>
+                            <option value="3yr" selected>3년 이상 완전 경력 보유 (무사고 우대)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-cov">4. 필수 대물배상 보장 설정 한도</label>
+                        <select id="calc-cov" required>
+                            <option value="200m">대물배상 2억 원 한도</option>
+                            <option value="500m">대물배상 5억 원 한도 (중간 수준)</option>
+                            <option value="1000m" selected>대물배상 10억 원 무제한급 권장 한도</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-injury">5. 사고 신체 상해 담보 선택</label>
+                        <select id="calc-injury" required>
+                            <option value="jason">자기신체사고 (자손) - 치료 한도 제한형</option>
+                            <option value="jasang" selected>자동차상해 (자상) - 무제한 상해 전액 보장형 (추천)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-mileage">6. 예상 연간 주행 거리 (마일리지 할인율 반영)</label>
+                        <select id="calc-mileage" required>
+                            <option value="low">연간 5,000 km 미만 (최고 약 35% 환급 환산)</option>
+                            <option value="mid-low" selected>연간 5,000 km ~ 10,000 km 미만</option>
+                            <option value="high">연간 10,000 km 이상 (기본 주행)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="calc-btn">2026 예상 연간 최종 보험료 및 절약 리포트 확인하기</button>
+                </div>
+            </form>
+
+            <div id="result" class="result-box">
+                <h4>분석 리포트 산출 완료</h4>
+                <p id="premium-amount"></p>
+                <p id="premium-advice"></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. AI 검색 기반 검색과 비교 트렌드의 대전환</h2>
+            <p>
+                이제 소비자들은 오프라인 설계사나 주먹구구식 광고 전단지에 의존하지 않습니다. 과거의 무조건적인 광고 지출 중심 비교 패러다임에서 탈피하여 챗지피티(ChatGPT)나 구글의 제미나이(Gemini) 같은 첨단 대규모 언어 모델(AI) 기반으로 개정 약관을 실시간 대조 분석하고, 자신의 실제 주행 빅데이터가 누적된 토스, 네이버, 카카오톡 플랫폼의 맞춤형 자동화 전문 컨설팅 혜택을 이용하는 경향이 주류로 자리를 잡았습니다.
+            </p>
+            <p>
+                특히 첨단 기술(AI) 연계 안전운전 스코어링 시스템을 활용하면 기본적으로 고시된 요율 대비 최대 13%의 직접 할인을 수렴받는 동시에 탄소 배출 절감 운동에 동참할 수 있습니다. 스마트폰의 내비게이션 주행 점수가 보험 가입 당일 실시간으로 해당 데이터베이스와 양방향 통신 연동됨으로써 지출을 효과적으로 예방하는 구조를 완성하게 됩니다.
+            </p>
+        </section>
+
+        <section>
+            <h2>8. 공신력 있는 공식 외부 정보 출처</h2>
+            <p>
+                더욱 신뢰도 높은 법적 근거나 구체적인 세제 지침 및 통계 자료는 아래 공인된 공식적인 정부 부처 및 협회 웹 포털에서 세부적으로 열람하실 수 있습니다.
+            </p>
+
+            <div class="link-grid">
+                <div class="link-card">
+                    <a href="https://www.fss.or.kr/" target="_blank" rel="noopener noreferrer">금융감독원 공식 홈페이지</a>
+                    <span>자동차 보험 시장 제도 및 소비자 가입 유의사항 발표 자료 제공</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://www.knia.or.kr/" target="_blank" rel="noopener noreferrer">손해보험협회 공시실</a>
+                    <span>손해보험사별 다이렉트 공시 요율 및 실시간 공정 비교 플랫폼</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://www.kidi.or.kr/" target="_blank" rel="noopener noreferrer">보험개발원 포털</a>
+                    <span>자동차 사고 통계 데이터 기반 요율 계산 및 등급 확인 제공</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer">국가법령정보센터</a>
+                    <span>자동차손해배상 보장법 및 시행령 등 법률적 의무 사항 규정 검토</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://namu.wiki/w/%EC%9E%90%EB%8F%99%EC%B0%A8%20%EB%B3%B4%ED%97%98" target="_blank" rel="noopener noreferrer">나무위키 자동차 보험</a>
+                    <span>국내 대인, 대물, 자기차량손해 실무 개념 및 대중적인 백과 용어집</span>
+                </div>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+    <!-- 실시간 요율 연동 스크립트 -->
+    <script>
+        function calculatePremium() {
+            const age = parseInt(document.getElementById('calc-age').value);
+            const model = document.getElementById('calc-model').value);
+            const exp = document.getElementById('calc-exp').value;
+            const cov = document.getElementById('calc-cov').value;
+            const injury = document.getElementById('calc-injury').value;
+            const mileage = document.getElementById('calc-mileage').value;
+
+            // 가상 기본 보험료
+            let basePremium = 700000;
+
+            // 나이대 가중치 적용
+            if (age === 21) {
+                basePremium *= 2.6;
+            } else if (age === 24) {
+                basePremium *= 1.8;
+            } else if (age === 26) {
+                basePremium *= 1.3;
+            } else if (age === 30) {
+                basePremium *= 0.85;
+            } else {
+                basePremium *= 0.9;
+            }
+
+            // 모델 가중치 적용
+            if (model === 'compact') {
+                basePremium *= 0.9;
+            } else if (model === 'mid') {
+                basePremium *= 1.1;
+            } else if (model === 'luxury') {
+                basePremium *= 1.4;
+            } else if (model === 'import') {
+                basePremium *= 1.8;
+            } else if (model === 'high-import') {
+                basePremium *= 2.5;
+            }
+
+            // 경력 가중치 적용
+            if (exp === 'none') {
+                basePremium *= 1.4;
+            } else if (exp === '1yr') {
+                basePremium *= 1.1;
+            } else {
+                basePremium *= 0.85;
+            }
+
+            // 대물배상 설정에 의한 소폭 변동
+            if (cov === '1000m') {
+                basePremium += 12000;
+            } else if (cov === '500m') {
+                basePremium += 6000;
+            }
+
+            // 자동차상해 지정에 따른 변동
+            if (injury === 'jasang') {
+                basePremium += 35000;
+            }
+
+            // 주행거리에 따른 최종 예상 사후 할인액 적용
+            let discountRate = 0;
+            if (mileage === 'low') {
+                discountRate = 0.35;
+            } else if (mileage === 'mid-low') {
+                discountRate = 0.18;
+            }
+
+            const calculatedBase = Math.round(basePremium);
+            const afterDiscount = Math.round(basePremium * (1 - discountRate));
+
+            const formatBase = calculatedBase.toLocaleString() + ' 원';
+            const formatAfter = afterDiscount.toLocaleString() + ' 원';
+
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('premium-amount').innerHTML = 
+                '귀하의 기본 예상 총액 범위는 연간 <strong>' + formatBase + '</strong> 수준이며, 연말 마일리지 주행거리 주행 조건 등을 환급 시 최종 가해지는 체감 지출 예상액은 약 <strong>' + formatAfter + '</strong> 선으로 정산됩니다.';
+            
+            let advice = '최적의 설계를 유도하기 위해 ';
+            if (injury === 'jason') {
+                advice += '사고 시 등급 한도가 누락되는 자기신체사고를 대신하여 무제한적 커버를 제공하는 <strong>자동차상해(자상)</strong>로의 대체를 적극 제안 드립니다. ';
+            } else {
+                advice += '이미 보장성이 뛰어난 자동차상해로 잘 지정해 주셨습니다. ';
+            }
+
+            if (cov !== '1000m') {
+                advice += '또한, 혹시 모를 외제차 접촉 리스크를 고려하여 대물배상은 연간 6천원 안팎의 적은 비용 추가만으로 전환할 수 있는 10억 원 한도를 지향하시는 편이 합리적입니다.';
+            } else {
+                advice += '대물배상 한도를 10억으로 넓히신 설계 역시 고가 대형 외제 차량과의 다중 충돌에 완벽히 대응할 수 있는 추천 방향입니다.';
+            }
+
+            document.getElementById('premium-advice').innerHTML = advice;
+        }
+    </script>
+  
